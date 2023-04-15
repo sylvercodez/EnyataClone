@@ -8,20 +8,185 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+}
+
+header{
+  position: sticky;
+  z-index: 30;
+  top: 0;
+}
+
+.mains{
+  max-width: 1440px;
+width: 83% !important;
+margin: auto;
+margin-top: 90px;
+}
+
+.apps{
+  background-image: url('.././public/application.png');
+  background-position: 100% 100%;
+  min-height: 353px;
+}
+.design{
+  background-image: url('.././public/design.svg');
+  background-position: 100% 100%;
+  min-height: 353px;
+}
+.foot{
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='417' height='422' fill='none'%3E%3Cpath fill='%2300ABEB' d='M208.9 209.34h209.417v211.083H208.9V209.34Z'/%3E%3Cpath fill='%23481787' d='M208.885 211.958h209.243V2.27c-115.588 0-209.243 93.95-209.243 209.688Z'/%3E%3Cpath fill='%23481787' d='M418.128 211.487H208.885v209.514c115.589 0 209.243-93.776 209.243-209.514Z'/%3E%3Cpath fill='%23A6CAE8' d='M0 .001h209v213H0v-213Z'/%3E%3Cpath fill='%23481787' d='M209 212.001H0v-211c115.454 0 209 94.441 209 211Z'/%3E%3Cpath fill='%2300ABEB' d='M.003 211.428h209.243v209.515C93.657 420.943.003 327.167.003 211.428Z'/%3E%3C/svg%3E");
+  background-position: 100% 0;
+}
+
+.boxs{
+  background: linear-gradient(180deg,#fefbff 42.04%,rgba(245,250,254,0));
+}
+.mobile{
+  background-image: url('.././public/mobile.png');
+  background-position: 100% 100%;
+  min-height: 353px;
+}
+.data{
+  background-image: url('https://www.enyata.com/static/media/data-science.b148e5fd401dc9d42e69.svg');
+  background-position: 100% 100%;
+  min-height: 353px;
+}
+.read{
+  gap: 8px;
+}
+.read:hover{
+  gap: 14px;
+}
+.block{
+  text-decoration: underline;
+}
+.main{
+  max-width: 1440px;
+width: 83%;
+margin: auto;
+margin-top: 40px
+}
+nav{
+  display: flex;
+max-width: 1440px;
+width: 83%;
+margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+@media screen and (max-width:768px) {
+  .foot{
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='210' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h103.92v105.91H0V0Z' fill='%23A6CAE8'/%3E%3Cpath d='M103.92 105.412H0V.497c57.407 0 103.92 46.958 103.92 104.915Z' fill='%23481787'/%3E%3Cpath d='M.002 105.13h104.042v104.177C46.57 209.307.002 162.678.002 105.13Z' fill='%2300ABEB'/%3E%3C/svg%3E");
+    background-position: 100% 0;
+  }
+  .mains, .nav, .main{
+    width: 90% !important;
+  }
+  .nav{
+    padding: 20px 0;
+  }
+}
+.nav__item{
+  font-family: 'DM Sans', sans-serif;
+  text-decoration: none;
+}
+.nav__item:hover{
+  text-decoration: underline;
+}
+.nav__menu-bar{
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+  cursor: pointer;
+}
+.nav__menu-bar div{
+  width: 40px;
+  height: 4px;
+  background-color: black;
+  border-radius: 2px;
+}
+.nav__menu-list{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 60px;
+  width: 288px;
+  row-gap: 24px;
+  right: -288px;
+  padding: 24px 16px;
+  transition: all 0.2s;
+  min-height: calc(100vh - 60px);
+  color: black;
+  background-color: #FFFFFF;
+}
+.nav__menu-list.active{
+  right: 0;
+}
+.nav__link{
+  font-size: 18px; 
+  position: relative;
+  transition: all 0.2s;
+}
+
+.nav__link:hover{
+ font-weight: bold;
+}
+
+.center{
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .nav__menu-bar{
+    display: none;
+  }
+  .nav__menu-list{
+    position: unset;
+    flex-direction: row;
+    min-height: fit-content;
+    width: fit-content;
+    font-family: 'DM Sans', sans-serif;
+    column-gap: 24px;
+    align-items: center;
+    color: #000;
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+    
+  }
+  .nav__menu-list.last-child{
+    margin-right: 0;
+  }
+  .nav__link::before{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 6px;
+    bottom: -16px;
+    left: 0;
+    background-color: black;
+    transition: all 0.2s;
+  }
+  
+  .nav__link:hover:before{
+   width: 100%;
+  }
 }
