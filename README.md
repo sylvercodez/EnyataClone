@@ -30,4 +30,4 @@ Tailwind CSS was chosen as the CSS framework for this project for the following 
 
 ## Credits
 
-This clone was created by [Your Name]. The original design and content of the Enyata landing page is owned by Enyata.
+This clone was created by Otenaike Oluwatobi. The original design and content of the Enyata landing page is owned by Enyata.
